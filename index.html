@@ -8,26 +8,870 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-     
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #ffffff;
+        color: #222;
+      }
+
+      /* ************************************************************************** */
+      /* Navbar */
+      .navbar {
+        width: 100%;
+        padding: 15px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e5e5e5;
+        background: #fff;
+      }
+
+      /* Logo */
+      .logo img {
+        height: 120px;
+        object-fit: contain;
+      }
+
+      /* Navigation items */
+      .nav-items {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+      }
+
+      .nav-items a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+
+      .nav-items a:hover {
+        color: #ff773d;
+      }
+
+      /* Login button */
+      .cart-button {
+        padding: 8px 18px;
+        background: #024e9c;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: #fff 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .cart-icon {
+        height: 20px;
+      }
+
+      .cart-button:hover {
+        background: #0a65c0;
+      }
+      /* ************************************************************************** */
+
+      /* Hero Section */
+
+      .hero-section {
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 60px;
+        background: #f7f7f7;
+        border-bottom: 1px solid #e5e5e5;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .sub-heading {
+        font-family: "Cantarell";
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: #024e9c;
+      }
+
+      .heading {
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.1;
+      }
+
+      .info {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #555;
+      }
+
+      .cta-btn {
+        background-color: #024e9c;
+        color: white;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 4px;
+        font-size: 15px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .cta-btn:hover {
+        background-color: #0a65c0;
+      }
+
+      .hero-image img {
+        /* height: 340%; */
+        /* height: 200px; */
+        height: 70vh;
+        object-fit: cover;
+      }
+
+      /* ************************************************************************** */
+      /* Join Us */
+
+      .ss-join {
+        box-sizing: border-box;
+        font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+          Arial;
+        padding: 28px 18px;
+      }
+
+      .ss-join__panel {
+        max-width: 1100px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        gap: 26px;
+        align-items: center;
+        padding: 28px;
+        box-shadow: 0 8px 30px rgba(6, 10, 15, 0.06);
+        position: relative;
+      }
+
+      .ss-join__art {
+        flex: 0 0 300px;
+        height: 140px;
+        border-radius: 10px;
+        background-image: url("/mnt/data/d6e549ef-afda-42c3-9910-03358e697906.png");
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 10px 30px rgba(6, 10, 15, 0.08);
+        display: block;
+      }
+
+      .ss-join__content {
+        flex: 1 1 480px;
+        min-width: 220px;
+        z-index: 2;
+      }
+
+      .ss-join__eyebrow {
+        font-family: "Cantarell", sans-serif;
+        font-weight: 700;
+        color: #024e9c;
+        font-size: 13px;
+        letter-spacing: 0.6px;
+        margin-bottom: 6px;
+      }
+
+      .ss-join__title {
+        font-family: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+        font-size: clamp(20px, 2.4vw, 30px);
+        color: #0f1724;
+        margin: 6px 0 10px;
+        line-height: 1.05;
+      }
+
+      .ss-join__desc {
+        color: #6b7280;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+        max-width: 58ch;
+      }
+
+      .ss-join__form {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .ss-join__input {
+        flex: 1;
+        min-width: 0;
+        padding: 12px 14px;
+        border-radius: 8px;
+        border: 1px solid rgba(15, 20, 30, 0.06);
+        background: #fff;
+        font-size: 15px;
+        outline: none;
+        transition: border-color 120ms ease, box-shadow 120ms ease;
+      }
+      .ss-join__input::placeholder {
+        color: #aab3bd;
+      }
+
+      .ss-join__input:focus {
+        border-color: rgba(2, 78, 156, 0.8);
+        box-shadow: 0 8px 22px rgba(2, 78, 156, 0.06);
+      }
+
+      .ss-join__btn {
+        flex: 0 0 auto;
+        padding: 11px 22px;
+        border-radius: 999px;
+        border: 0;
+        background: #024e9c;
+        color: white;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+        box-shadow: 0 10px 28px rgba(2, 78, 156, 0.12);
+        transition: transform 120ms ease, opacity 120ms ease;
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+      }
+      .ss-join__btn:hover {
+        transform: translateY(-3px);
+        opacity: 0.98;
+      }
+
+      .ss-join__note {
+        margin-top: 10px;
+        color: #6b7280;
+        font-size: 13px;
+      }
+
+      @media (max-width: 880px) {
+        .ss-join__panel {
+          flex-direction: column;
+          align-items: stretch;
+          padding: 20px;
+          gap: 18px;
+        }
+        .ss-join__art {
+          width: 100%;
+          height: 180px;
+          flex: none;
+          border-radius: 8px;
+        }
+        .ss-join__form {
+          flex-direction: column;
+        }
+        .ss-join__btn {
+          width: 100%;
+          padding: 12px 14px;
+        }
+      }
+
+      /* ************************************************************************** */
+      /* Footer */
+      .ss-footer {
+        background: #0d1523;
+        color: #d6d8df;
+        padding: 40px 20px 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        font-family: "Poppins", sans-serif;
+      }
+
+      .ss-footer-inner {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .ss-footer-col {
+        min-width: 220px;
+        max-width: 350px;
+      }
+
+      .ss-footer-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      .ss-footer-desc {
+        font-size: 14px;
+        color: #a5acb8;
+        line-height: 1.6;
+      }
+
+      .ss-footer-subtitle {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #fff;
+      }
+
+      .ss-footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .ss-footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .ss-footer-links a {
+        color: #c9ced8;
+        font-size: 14px;
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
+
+      .ss-footer-links a:hover {
+        color: #fff;
+      }
+
+      .ss-footer-contact {
+        font-size: 14px;
+        color: #c7ccd5;
+        margin-bottom: 6px;
+      }
+
+      /* Social icons (circular & modern) */
+      .ss-footer-socials {
+        display: flex;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .social {
+        width: 36px;
+        height: 36px;
+        background: #1c2535;
+        border-radius: 8px;
+        display: inline-block;
+      }
+
+      .social.insta {
+        background: linear-gradient(45deg, #ff9a34, #d94fa1, #8134af);
+      }
+      .social.linkedin {
+        background: #0077b5;
+      }
+      .social.x {
+        background: #2d3748;
+      }
+      .social.github {
+        background: #ea4aaa;
+      }
+
+      /* Bottom row */
+      .ss-footer-bottom {
+        margin-top: 25px;
+        text-align: center;
+        font-size: 14px;
+        color: #8e96a3;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .ss-footer-inner {
+          flex-direction: column;
+          gap: 25px;
+        }
+      }
+
+      /* ************************************************************************** */
+      /* Product Items */
+
+      .title-main {
+        text-align: center;
+        margin-bottom: 35px;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #222;
+      }
+      .top {
+        width: 100%;
+        background: #fff;
+        border-bottom: 1px solid #eef1f6;
+        padding: 18px 24px;
+      }
+      .top .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .brand {
+        font-family: "Lato", system-ui, -apple-system, "Segoe UI", Roboto,
+          sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: #111827;
+        letter-spacing: 0.2px;
+      }
+
+      /* Page title */
+      .page-title {
+        max-width: 1200px;
+        margin: 28px auto 18px;
+        padding: 0 20px;
+        font-family: "Lato", system-ui, -apple-system, "Segoe UI", Roboto,
+          sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #111827;
+      }
+
+      .grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 8px 20px 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: #fff;
+        border: 1px solid #eef2f6;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 30px rgba(15, 20, 30, 0.06);
+      }
+
+      .media {
+        aspect-ratio: 4/3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        background: #fbfcfd;
+      }
+      .media img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        display: block;
+      }
+
+      .meta {
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+      }
+      .title {
+        font-family: "Lato", system-ui, -apple-system, "Segoe UI", Roboto,
+          sans-serif;
+        font-size: 0.96rem;
+        font-weight: 700;
+        color: #111827;
+        line-height: 1.12;
+        display: -webkit-box;
+        overflow: hidden;
+      }
+      .meta-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+      }
+      .price {
+        font-family: "Lato";
+        font-weight: 600;
+        color: #024e9c;
+        font-size: 1rem;
+      }
+      .rating {
+        font-size: 0.85rem;
+        color: #6b7280;
+        display: flex;
+        align-items: center;
+      }
+      .rating img {
+        height: 20px;
+      }
+
+      .card-foot {
+        padding: 12px 14px 16px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .btn {
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border-radius: 4px;
+        font-size: 0.95rem;
+        font-family: "Lato";
+        border: 0;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: #024e9c;
+        color: #fff;
+        /* font-size: 12px; */
+      }
+      .btn-primary img {
+        height: 20px;
+      }
+      .btn-ghost {
+        background: transparent;
+        color: #111827;
+        border: 1px solid #e7eaef;
+      }
+
+      .badge {
+        font-family: "Cantarell", sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        color: #024e9c;
+        padding: 6px 8px;
+        border-radius: 999px;
+        background: rgba(2, 78, 156, 0.05);
+      }
+
+      .empty {
+        grid-column: 1/-1;
+        text-align: center;
+        color: #6b7280;
+        padding: 40px 10px;
+      }
+
+      @media (max-width: 640px) {
+        .page-title {
+          padding: 0 14px;
+          font-size: 1.15rem;
+          margin-top: 18px;
+        }
+        .top {
+          padding: 14px 12px;
+        }
+        .media {
+          padding: 10px;
+        }
+      }
+
+      /* ************************************************************************** */
     </style>
   </head>
 
   <body>
     <!-- landing page components -->
-     
-    <!-- Nav bar -->
-    <div id="navbar"></div>
+    <!-- ********************************************************************* -->
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <img
+          src="https://res.cloudinary.com/dilr4t8mt/image/upload/v1763378718/Untitled_design_2_wyxpvf.png"
+          alt="Logo"
+        />
+      </div>
+
+      <ul class="nav-items">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="../pages/cart.html">Cart</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Contact Us</a></li>
+      </ul>
+      <button class="cart-button">
+        <span> Cart </span>
+        <img
+          class="cart-icon"
+          src="/assets/icons/addToCart.svg"
+          alt="cart-icon"
+        />
+      </button>
+    </div>
+    <!-- ********************************************************************* -->
+
     <!-- Hero Section -->
-    <div id="heroSection"></div>
-    <!-- Display Images -->
-    <div id="displayProducts"></div>
+
+    <div class="hero-section">
+      <div class="hero-content">
+        <span class="sub-heading">NEW ARRIVALS</span>
+
+        <h1 class="heading">SS Store</h1>
+
+        <p class="info">
+          Discover premium-quality essentials designed for daily comfort and
+          style. Simple, minimal, and made for everyone.
+        </p>
+        <a href="#displayProducts">
+          <button class="cta-btn">Discover</button>
+        </a>
+      </div>
+
+      <div class="hero-image">
+        <img src="/assets/images/herosection.png" alt="Hero Image" />
+      </div>
+    </div>
+
+    <!-- ********************************************************************* -->
+
+    <!-- Display Products -->
+    <div id="displayProducts">
+      <header class="top">
+        <h1 class="title-main">Product Store</h1>
+
+        <div class="wrap">
+          <div class="brand">SS Store</div>
+          <div class="badge" aria-hidden="true">NEW</div>
+        </div>
+      </header>
+
+      <h2 class="page-title">Featured products</h2>
+
+      <main>
+        <section id="grid" class="grid" aria-live="polite">
+          <div class="empty">Loading products…</div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ********************************************************************* -->
+
     <!-- joinUs -->
-    <div id="joinUs"></div>
+    <section class="ss-join" aria-labelledby="join-title">
+      <div class="ss-join__panel">
+        <div class="ss-join__content">
+          <div class="ss-join__eyebrow">JOIN OUR CLUB</div>
+          <h2 id="join-title" class="ss-join__title">
+            Be part of SS Store — exclusive deals & new drops
+          </h2>
+          <p class="ss-join__desc">
+            Sign up to receive curated product drops, members-only discounts,
+            and early access to seasonal sales. We'll keep it useful — and rare.
+          </p>
+
+          <form
+            class="ss-join__form"
+            action="#"
+            onsubmit="event.preventDefault();"
+          >
+            <label for="ss-join-email" class="ss-sr">Email address</label>
+            <input
+              id="ss-join-email"
+              class="ss-join__input"
+              type="email"
+              placeholder="Enter your email"
+              required
+            />
+
+            <button type="submit" class="ss-join__btn" title="Subscribe">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13a2.5 2.5 0 0 0 2.5-2.5v-7"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M21 6.5a2.5 2.5 0 0 0-2.5-2.5h-13A2.5 2.5 0 0 0 3 6.5"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M21 6.5l-9 6.5L3 6.5"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ********************************************************************* -->
     <!-- Footer -->
-    <div id="footer"></div>
-   
 
-    <script type="module" src="./imports.js"></script>
+    <footer class="ss-footer">
+      <div class="ss-footer-inner">
+        <!-- Column 1 -->
+        <div class="ss-footer-col">
+          <h3 class="ss-footer-title">SS Store</h3>
+          <p class="ss-footer-desc">
+            Shaping the future of online shopping, one click at a time.Combining
+            smart design with powerful technology for your online store.
+          </p>
+        </div>
 
+        <!-- Column 2 -->
+        <div class="ss-footer-col">
+          <h3 class="ss-footer-subtitle">Quick Links</h3>
+          <ul class="ss-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="ss-footer-col">
+          <h3 class="ss-footer-subtitle">Contact</h3>
+          <p class="ss-footer-contact">
+            Email: satyaanshsofttechpvltltd@gmail.com
+          </p>
+          <p class="ss-footer-contact">Phone: +91 70822 52235</p>
+        </div>
+      </div>
+
+      <div class="ss-footer-bottom">
+        © 2025 Satyaansh Softech. All Rights Reserved.
+      </div>
+    </footer>
+
+    <!-- ********************************************************************* -->
+
+    <script>
+      const grid = document.getElementById("grid");
+
+      // /*********************************************************/
+
+      // Displaying Each Product
+      
+      function renderCard(p) {
+        const article = document.createElement("article");
+        article.className = "card";
+
+        article.innerHTML = `
+          <div class="media">
+            <img src="${p.image}" alt="${p.title}" loading="lazy">
+          </div>
+
+          <div class="meta">
+            <div class="title" title="${p.title}">${p.title}</div>
+
+            <div class="meta-row">
+              <div class="price">$${p.price}</div>
+              <div class="rating"><img src="/assets/icons/star.svg" alt="Rating"> ${p.rating.rate}</div>
+            </div>
+          </div>
+
+          <div class="card-foot" >
+            <button data-id="${p.id}" class="btn btn-primary add-btn" type="button" aria-pressed="false"><img src="/assets/icons/addToCart.svg">Add</button>
+            <button class="btn btn-ghost" type="button" aria-pressed="false">Quick view</button>
+          </div>
+        `;
+        return article;
+      }
+
+      // /*********************************************************/
+
+      // Handling API Fetched Data
+
+      const productData =
+        JSON.parse(localStorage.getItem("fetchedProducts")) || []; // to store fetched products
+
+      // Fetching API only if there is no product data in local storage
+      if (productData.length == 0) {
+        fetch("https://fakestoreapi.com/products")
+          .then((res) => {
+            if (!res.ok) throw new Error("Network error");
+            return res.json();
+          })
+          .then((products) => {
+            console.log(products);
+            productData.push(...products);
+            localStorage.setItem(
+              "fetchedProducts",
+              JSON.stringify(productData)
+            );
+            grid.innerHTML = "";
+            products.map((p) => grid.appendChild(renderCard(p)));
+          })
+          .catch((err) => {
+            console.error(err);
+            grid.innerHTML =
+              '<div class="empty">Failed to load products. Please try later.</div>';
+          });
+      }
+
+      grid.innerHTML = ""; // To remove "Loading Products..." text
+      productData.map((p) => grid.appendChild(renderCard(p))); // Displaying each product in card format
+
+      // /*************************************************************************/
+
+      // Managing Cart
+
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // Add Cart Items
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".add-btn");
+
+        // Selected Product - Product Id
+        const id = Number(btn.dataset.id);
+        // Product details of selected product
+        const product = productData.find((p) => p.id == id);
+        // Adding Quantity field to the selected product
+        const selectedProduct = { ...product, quantity: 1 };
+        // updating cart
+        cart.push(selectedProduct);
+        // Disabling Selected Button - Add button
+        btn.textContent = "Added ✔";
+        btn.disabled = true;
+        btn.style.backgroundColor = "#1e74cad2";
+        console.log("Cart:", cart);
+
+        onCartChange();
+      });
+
+      function onCartChange() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      // /*********************************************************/
+    </script>
   </body>
 </html>
