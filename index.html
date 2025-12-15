@@ -833,6 +833,8 @@
             grid.innerHTML =
               '<div class="empty">Failed to load products. Please try later.</div>';
           });
+      } else {
+        renderProducts(productData);
       }
 
       function renderProducts(products) {
