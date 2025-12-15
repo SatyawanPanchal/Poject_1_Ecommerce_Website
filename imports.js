@@ -1,3 +1,4 @@
+
 async function loadComponent(path, targetSelector) {
   const res = await fetch(path);
   const html = await res.text();
@@ -6,14 +7,17 @@ async function loadComponent(path, targetSelector) {
   container.innerHTML = html;
 
   const scripts = container.querySelectorAll("script");
+  
   scripts.forEach((oldScript) => {
     const newScript = document.createElement("script");
+    
     if (oldScript.src) {
       newScript.src = oldScript.src;
     } else {
       newScript.textContent = oldScript.textContent;
     }
     document.body.appendChild(newScript);
+    console.log('new script contents',newScript);
     oldScript.remove();
   });
 }
