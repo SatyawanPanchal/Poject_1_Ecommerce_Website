@@ -122,29 +122,29 @@
         ".cart-items .panel .cart-products"
       );
       document.addEventListener("DOMContentLoaded", () => {
-        addedProducts.map((each) => {
+        addedProducts.map((item) => {
           const product = document.createElement("div");
           product.innerHTML = `
-            <article class="item" data-cart-index="${each.id}" aria-labelledby="prod-3">
+            <article class="item" data-cart-index="${item.id}" aria-labelledby="prod-3">
               <div class="item-img">
                 <img
-                    src="${each.image}"
-                    alt="${each.title}"
+                    src="${item.image}"
+                    alt="${item.title}"
                   />
                 </div>
                 <div class="item-body">
                   <div>
                     <div id="prod-3" class="item-title">
-                      ${each.title}
+                      ${item.title}
                     </div>
                     <div class="item-meta">
-                     Rate: ${each.rating.rate} · Category: ${each.category} ·
-                      <span class="item-price">$${each.price}</span>
+                     Rate: ${item.rating.rate} · Category: ${item.category} ·
+                      <span class="item-price">$${item.price}</span>
                     </div>
                   </div>
                   <div class="item-actions">
                     <div class="qty"><img src="/assets/icons/decrease.svg" class="decrease" alt="Subtract">
-                      <span class="product-count">${each.quantity}</span>
+                      <span class="product-count">${item.quantity}</span>
                       <img src="/assets/icons/add.svg" class="increase" alt="Add"></div>
                     <span class="remove"
                       >Remove</

@@ -18,8 +18,8 @@ async function loadComponent(path, targetSelector) {
   });
 }
 
+loadComponent("./Components/navbar.html", "#navbar");
 loadComponent("/HomeComponents/heroSection.html", "#heroSection");
 loadComponent("/HomeComponents/displayProducts.html", "#displayProducts");
-loadComponent("./Components/navbar.html", "#navbar");
 loadComponent("./Components/footer.html", "#footer");
 loadComponent("/HomeComponents/joinUs.html", "#joinUs");

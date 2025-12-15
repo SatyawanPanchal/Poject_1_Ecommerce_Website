@@ -287,11 +287,9 @@
           return r.json();
         })
         .then((products) => {
+          console.log(products);
           productData.push(...products);
           grid.innerHTML = "";
-          products.sort(
-            (a, b) => (b.rating?.rate || 0) - (a.rating?.rate || 0)
-          );
           products.forEach((p) => grid.appendChild(renderCard(p)));
         })
         .catch((err) => {
@@ -307,21 +305,21 @@
       // Add Cart Items
       document.addEventListener("click", (e) => {
         const btn = e.target.closest(".add-btn");
-        if (!btn) return;
 
         const id = Number(btn.dataset.id);
         const product = productData.find((p) => p.id == id);
-        if (!product) return;
         const existingItem = cart.find((item) => item.id === id);
         if (existingItem) {
           existingItem.quantity = (existingItem.quantity || 1) + 1;
         } else {
-          cart.push({ ...product, quantity: 1 });
+          const selectedProduct = { ...product, quantity: 1 };
+          cart.push(selectedProduct);
         }
+
         btn.textContent = "Added ✔";
         btn.disabled = true;
         btn.style.backgroundColor = "#1e74cad2";
-        console.log("Cart:", product);
+        console.log("Cart:", cart);
 
         onCartChange();
       });
