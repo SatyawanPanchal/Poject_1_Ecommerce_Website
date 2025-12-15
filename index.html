@@ -631,8 +631,8 @@
         <h1 class="heading">SS Store</h1>
 
         <p class="info">
-          Discover premium-quality essentials designed for daily comfort and
-          style. Simple, minimal, and made for everyone.
+          Just as our products are made with care and attention to detail,
+          Satyaansh Softech delivers the same quality in everything we build.
         </p>
         <a href="#displayProducts">
           <button class="cta-btn">Discover</button>
@@ -742,8 +742,7 @@
         <div class="ss-footer-col">
           <h3 class="ss-footer-title">SS Store</h3>
           <p class="ss-footer-desc">
-            Shaping the future of online shopping, one click at a time.Combining
-            smart design with powerful technology for your online store.
+            Good products. Same standards. Satyaansh Softech.
           </p>
         </div>
 
@@ -779,7 +778,7 @@
       // /*********************************************************/
 
       // Displaying Each Product
-      
+
       function renderCard(p) {
         const article = document.createElement("article");
         article.className = "card";
@@ -827,8 +826,7 @@
               "fetchedProducts",
               JSON.stringify(productData)
             );
-            grid.innerHTML = "";
-            products.map((p) => grid.appendChild(renderCard(p)));
+            renderProducts(productData);
           })
           .catch((err) => {
             console.error(err);
@@ -837,8 +835,10 @@
           });
       }
 
-      grid.innerHTML = ""; // To remove "Loading Products..." text
-      productData.map((p) => grid.appendChild(renderCard(p))); // Displaying each product in card format
+      function renderProducts(products) {
+        grid.innerHTML = ""; // To remove "Loading Products..." text
+        products.map((p) => grid.appendChild(renderCard(p))); // Displaying each product in card format
+      }
 
       // /*************************************************************************/
 
