@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+
+</head>
+
+<body>
+    <!-- top part -->
+    <div class="header">
+        <img src="https://res.cloudinary.com/dilr4t8mt/image/upload/v1763378718/Untitled_design_2_wyxpvf.png"
+            alt="SS Store" />
+        <span> <a href="main.html">Continue Shopping ➡️</a></span>
+    </div>
+
+    <div class="totalCart">
+        <!-- shopping cart list -->
+        <div class="shoppingList">
+            <div class="listHeader">
+                <h3>Shopping Cart</h3>
+                <span class="itemsCount">2 items</span>
+            </div>
+
+            <div class="cartDiv">
+                <!-- demo item Item 1 -->
+
+            </div>
+
+            <div class="offer">
+                <span> Promo: Get free shipping on orders over $99 </span>
+            </div>
+        </div>
+
+
+        <!-- order summary -->
+
+        <div class="orSum">
+            <h1>Order Summary</h1>
+            <hr>
+            <!-- subtotal -->
+            <div class="subTotal">
+                <span>SubTotal</span>
+                <span>$ ${sumObj.subTotal}</span>
+            </div>
+            <!-- Estimated shipping -->
+            <div class="shippingCost">
+                <span>Estimated shipping</span>
+                <span>$ ${sumObj.estimatedShipping}</span>
+            </div>
+            <!-- tax applied -->
+            <div class="taxDiv">
+                <span>Tax</span>
+                <span>$ ${sumObj.tax}</span>
+            </div>
+            <!-- total of cost shipping and tax -->
+            <div class="totalDiv">
+                <h4>Total</h4>
+                <span>$ ${sumObj.total}</span>
+            </div>
+
+        </div>
+
+        <div class="orSum">
+            <h1>Order Summary</h1>
+            <hr>
+            <!-- Subtotal -->
+            <div class="row subTotal">
+                <span>SubTotal</span>
+                <span>$456</span>
+            </div>
+
+
+            <!-- Tax Applied -->
+            <div class="row taxDiv">
+                <span>Tax</span>
+                <span>$4</span>
+            </div>
+
+            <!-- Total Cist -->
+            <div class="row totalDiv">
+                <span>SubTotal</span>
+                <span>$460</span>
+            </div>
+
+            <button class="proceedbtn">Proceed To this Checkout</button>
+        </div>
+    </div>
+
+
+
+    <script src="cart.js"></script>
+
+</body>
+
+</html>
